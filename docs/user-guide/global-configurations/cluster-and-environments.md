@@ -183,7 +183,7 @@ Click **Save Cluster** to save your cluster on Devtron.
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-Users need to have super-admin permission to add an isolated/airgapped cluster to Devtron.
+Users need to have super-admin permission to add an isolated/air-gapped cluster to Devtron.
 {% endhint %}
 
 For air-gapped Kubernetes clusters with restricted inbound and outbound traffic, Devtron enables seamless management using isolated clusters. While these are not actual clusters with API endpoints, they provide a convenient way to deploy applications in such environments.
