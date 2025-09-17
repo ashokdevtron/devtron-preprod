@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <p align="center">
 <picture>
   <source media="(prefers-color-scheme: dark)"  srcset="./assets/devtron-darkmode-logo.png">
@@ -241,3 +242,6 @@ We at Devtron, take security and our users' trust very seriously. If you believe
 ## :bookmark: License
  
 Devtron is licensed under [Apache License, Version 2.0](LICENSE)
+=======
+# devtron-preprod# devtron-preprod
+>>>>>>> 453d0179 (first commit)
