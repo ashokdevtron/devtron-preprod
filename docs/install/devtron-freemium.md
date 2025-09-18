@@ -2,7 +2,7 @@
 
 ## Introduction
 
-With Devtron Freemium, you can access all the enterprise features limited to adding one additional cluster only, i.e., Devtron cluster (the cluster where Devtron is installed) and you can add up to one additional Kubernetes cluster. For your advanced and challenging use cases, you get comprehensive enterprise features including but not limited to:
+With Devtron Freemium, you can access all the enterprise features limited to 1 cluster managed by Devtron. For your advanced and challenging use cases, you get comprehensive enterprise features including but not limited to:
 
 * Release orchestration
 * Resource monitoring
@@ -75,7 +75,7 @@ Use this method if your email is not associated with any of the SSO options prov
 {% hint style="warning" %}
 #### Note
 
-We recommend you to install Devtron on a separate Kubernetes cluster, as Devtron Cluster (the one in which Devtron will be installed) might have critical system services. Therefore, it should be kept separate from application workloads. Please ensure that cluster `kubeconfig` is properly configured and available in your system.
+We recommend you to install Devtron on a separate Kubernetes cluster, as the one in which Devtron will be installed might run critical system services. Therefore, it should be kept separate from application workloads. Ensure that the cluster `kubeconfig` is properly configured and available in your system.
 
 See [Additional Installation Resources](../reference/) for production infra recommendations, air-gapped installs, blob storage, config overrides, backups, and more.
 {% endhint %}
