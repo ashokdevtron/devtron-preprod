@@ -45,16 +45,13 @@ The minimum requirements for installing `Modern Kubernetes Dashboard by Devtron`
     | **Devtron with CI/CD**                     |  6  |  13 GB |
     | **Modern Kubernetes Dashboard by Devtron** |  2  |  3 GB  |
 
-> Refer to the [Override Configurations](../install/override-default-devtron-installation-configs.md) section for more information.
+> Refer to the [Override Configurations](../install/override-default-devtron-installation-configs.md) section for more information. If you have questions, let us know on our Discord channel. [![Join us on Discord](https://img.shields.io/badge/Join%20us%20on-Discord-e01563.svg)](https://discord.gg/jsRG5qx2gp)
 
 {% hint style="warning" %}
 ### Note
 * Please make sure that the recommended resources are available on your Kubernetes cluster before you proceed with Devtron installation.
 * It is NOT recommended to use brustable CPU VMs (T series in AWS, B Series in Azure and E2/N1 in GCP) for Devtron installation to experience consistency in performance.
 {% endhint %}
-
-If you have questions, please let us know on our Discord channel. [![Join us on Discord](https://img.shields.io/badge/Join%20us%20on-Discord-e01563.svg)](https://discord.gg/jsRG5qx2gp)
-
 
 {% hint style="success" %}
 ### Next Step
