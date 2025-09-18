@@ -2,15 +2,15 @@
 
 ## Introduction
 
-Devtron can be installed on any [Kubernetes cluster](../getting-started/getting-started.md#create-a-kubernetes-cluster) of your choice.&#x20;
+Devtron can be installed on any [Kubernetes cluster](../getting-started/getting-started.md#create-a-kubernetes-cluster) of your choice.
 
 The following tiers are available in Devtron:
 
-| Tiers                                                              | Description                                                                                    |
-| ------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------- |
-| [**Install Devtron OSS**](devtron-oss.md)                          | OSS edition, with optional CI/CD and GitOps modules                                            |
-| [**Install Devtron Freemium**](../../install/devtron-freemium.md)  | All enterprise features, limited to 1 cluster managed by Devtron                               |
-| [**Install Devtron Enterprise**](https://devtron.ai/contact-sales) | Full access to enterprise features, with multi-cluster support and enterprise-scale solutions. |
+| Tiers        | Description           | Installation Link                                                |
+| ------------ | ----------------------| ---------------------------------------------------------------- |
+| OSS          | OSS edition, with optional CI/CD and GitOps modules   | [Install Devtron OSS](devtron-oss.md)                            |
+| Freemium     | All enterprise features, limited to 1 cluster managed by Devtron   | [Install Devtron Freemium](../../install/devtron-freemium.md)    |
+| Enterprise   | Full access to enterprise features, with multi-cluster support and enterprise-scale solutions | [Install Devtron Enterprise](https://devtron.ai/contact-sales) |
 
 ## Additional Resources
 
