@@ -12,7 +12,7 @@ The following tiers are available in Devtron:
 
 <details>
 
-<summary>Want to install Devtron in an Air-gapped environment?</summary>
+<summary><strong>Want to install Devtron in an Air-gapped environment?</strong></summary>
 
 See the full guide here: [Install Devtron in Air-gapped Environment](install-devtron-in-airgapped-environment.md)
 
@@ -20,7 +20,7 @@ See the full guide here: [Install Devtron in Air-gapped Environment](install-dev
 
 <details>
 
-<summary>Want to explore Devtron without installing on your cluster?</summary>
+<summary><strong>Want to explore Devtron without installing on your cluster?</strong></summary>
 
 * Try [Devtron Sandbox](https://preview.devtron.ai)
 * Try [Devtron Kubernetes Desktop Client](install-devtron-Kubernetes-client.md)
@@ -29,7 +29,7 @@ See the full guide here: [Install Devtron in Air-gapped Environment](install-dev
 
 <details>
 
-<summary>Need help or demo?</summary>
+<summary><strong>Need help or demo?</strong></summary>
 
 * [Discord community for support](https://discord.gg/jsRG5qx2gp)[![Join Discord](https://img.shields.io/badge/Join%20us%20on-Discord-e01563.svg)](https://discord.gg/jsRG5qx2gp).
 * [Book time with our team](https://devtron.ai/demo)
@@ -38,7 +38,7 @@ See the full guide here: [Install Devtron in Air-gapped Environment](install-dev
 
 <details>
 
-<summary>Looking for advanced setup?</summary>
+<summary><strong>Looking for advanced setup?</strong></summary>
 
 See [Additional Installation Resources](../../reference/) for production infra recommendations, advanced configs, blob storage, air-gapped installs, backup, and more.
 

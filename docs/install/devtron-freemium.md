@@ -12,7 +12,7 @@ With Devtron Freemium, you can access all the enterprise features limited to 1 c
 * Policies related to approval, deployment, plugins, tags, infra...and many more.
 
 {% hint style="info" %}
-#### Already using Devtron OSS?
+**Already using Devtron OSS?**
 
 This guide is intended for fresh installation of **Devtron Freemium**.\
 If you're currently using the [open-source (OSS) version of Devtron](../setup/install/devtron-oss.md), we **do not recommend** upgrading your existing setup to Devtron Freemium.
@@ -53,7 +53,7 @@ Use this method if your email is not associated with any of the SSO options prov
     ![Figure 4: Sending Login Link](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/license-dashboard-resend-email-v2.jpg)
 
 {% hint style="info" %}
-#### Did Not Receive Email?
+**Did Not Receive Email?**
 
 * Check all sections of the mailbox, including the 'Spam' section.
 * If the email is in the Spam section, mark it as 'Not Spam'.
@@ -73,7 +73,7 @@ Use this method if your email is not associated with any of the SSO options prov
 ## Step 2: Install Devtron
 
 {% hint style="warning" %}
-#### Note
+**Note**
 
 We recommend you to install Devtron on a separate Kubernetes cluster, as the one in which Devtron will be installed might run critical system services. Therefore, it should be kept separate from application workloads. Ensure that the cluster `kubeconfig` is properly configured and available in your system.
 
@@ -82,12 +82,12 @@ See [Additional Installation Resources](../reference/) for production infra reco
 
 The commands for installing **Devtron in Full Mode** (with integrations) is directly available on the **Devtron License Dashboard** for supported K8s distributions.
 
-Select your preferred K8s distribution and run the commands shown beneath it: The installation commands first, and then the commands to access the dashboard URL.
+Select your preferred K8s distribution and run the commands shown beneath it. First, the installation commands, and then the commands to access the dashboard URL.
 
 After successfully installing Devtron and obtaining the dashboard URL, click **Next** to proceed to [Step 3: Get License Key](devtron-freemium.md#step-3-get-license-key)
 
 {% hint style="info" %}
-#### Using MicroK8s/Kind/K3s/Cloud VMs? Want to Access Dashboard via NodePort? Or Locally from Remote VM?
+**Using MicroK8s/Kind/K3s/Cloud VMs? Want to Access Dashboard via NodePort? Or Locally from Remote VM?**
 
 * **Access via NodePort**:
 
@@ -97,7 +97,7 @@ To obtain the Dashboard URL on MicroK8s/Kind/K3s/Cloud VMs using NodePort, run t
 kubectl get svc -n devtroncd devtron-service -o jsonpath='{.spec.ports[0].nodePort}'
 ```
 
-<mark style="color:purple;">**Dashboard URL**</mark><mark style="color:purple;">:</mark> <mark style="color:purple;"></mark><mark style="color:purple;">`http://<HOST_IP>:<NODEPORT>/dashboard`</mark>
+<mark style="color:purple;">**Dashboard URL**</mark><mark style="color:purple;">:</mark> <mark style="color:purple;">`http://<HOST_IP>:<NODEPORT>/dashboard`</mark>
 
 ***
 
@@ -111,7 +111,7 @@ kubectl config use-context <context-name> # Set the correct context.
 kubectl -n devtroncd port-forward service/devtron-service 8000:80
 ```
 
-<mark style="color:purple;">**Dashboard URL**</mark><mark style="color:purple;">:</mark> <mark style="color:purple;"></mark><mark style="color:purple;">`http://127.0.0.1:8000`</mark>
+<mark style="color:purple;">**Dashboard URL**</mark><mark style="color:purple;">:</mark> <mark style="color:purple;">`http://127.0.0.1:8000`</mark>
 {% endhint %}
 
 ***
@@ -140,7 +140,7 @@ To get the **Installation Fingerprint**, follow the below steps:
     ![Figure 11: Copying Generated License Key](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-enterprise-license-key-generated-2.jpg)
 
 {% hint style="warning" %}
-#### Note
+**Note**
 
 The license key you generate will be valid only for your Devtron Freemium installation.
 
@@ -149,7 +149,7 @@ The license key you generate will be valid only for your Devtron Freemium instal
 {% endhint %}
 
 {% hint style="danger" %}
-#### Warning
+**Warning**
 
 The license is bound to your Kubernetes cluster and cannot be transferred to another cluster. In case the cluster is deleted, you cannot claim freemium license on a new cluster. In that case, contact [support@devtron.ai](../setup/install/support@devtron.ai).
 {% endhint %}
@@ -162,7 +162,7 @@ The license is bound to your Kubernetes cluster and cannot be transferred to ano
     ![Figure 13: Log in as Administrator](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterprise-license-login.jpg)
 
 {% hint style="info" %}
-#### Facing Issues?
+**Facing Issues?**
 
 Visit the [Troubleshoot](devtron-freemium.md#troubleshoot-issues) section to identify the issue or connect with [Devtron Support](../setup/install/support@devtron.ai).
 {% endhint %}
@@ -182,7 +182,7 @@ Visit the [Troubleshoot](devtron-freemium.md#troubleshoot-issues) section to ide
     ```
 
 {% hint style="warning" %}
-#### Next Recommended Action
+**Next Recommended Action**
 
 After the initial login, we recommend you set up an [Single Sign-On (SSO) service](../user-guide/global-configurations/sso-login.md) like Google, GitHub, etc., and then [add other members](../user-guide/global-configurations/authorization/user-access.md#add-users) (including yourself). Thereafter, they can log in using the configured SSO.
 {% endhint %}
