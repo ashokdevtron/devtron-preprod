@@ -79,7 +79,7 @@ helm install devtron devtron/devtron-operator \
 {% endtab %}
 
 {% tab title="With CI/CD" %}
-#### Command to install Devtron with CI/CD
+#### Command to Install Devtron with CI/CD
 
 ```bash
 helm install devtron devtron/devtron-operator \
@@ -89,7 +89,7 @@ helm install devtron devtron/devtron-operator \
 {% endtab %}
 
 {% tab title="With CI/CD + GitOps (Argo CD)" %}
-#### Command to install Devtron with CI/CD + GitOps (ArgoCD)
+#### Command to Install Devtron with CI/CD + GitOps (ArgoCD)
 
 ```bash
 helm install devtron devtron/devtron-operator \
