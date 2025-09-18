@@ -6,11 +6,11 @@ Devtron OSS is the open-source edition of Devtron intended for non-enterprise us
 
 The table below shows the installation options available in Devtron OSS. Further, there are steps given to install your preferred option in your Kubernetes cluster.
 
-| Installation Option                                           | What Is Included                                            | When To Use                                                                            |
-| ------------------------------------------------------------- | ----------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| [**Minimal (without integrations)**](devtron-oss.md#command)  | Dashboard + Resource Browser + Core operator configurations | A unified view of Helm apps, FluxCD apps, ArgoCD apps, and their related K8s resources |
-| [**With CI/CD**](devtron-oss.md#command-1)                    | Everything in Minimal + Build and Deploy (CI/CD) module     | You need a complete CI-CD pipeline for your custom apps (a.k.a Devtron Apps)           |
-| [**With CI/CD + GitOps (Argo CD)**](devtron-oss.md#command-2) | Everything in CI/CD + GitOps (Argo CD) module               | You need automated, Git-driven deployments                                             |
+| Installation Option                                                                                  | What Is Included                                            | When To Use                                                                            |
+| ---------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| [**Minimal (without integrations)**](devtron-oss.md#command-to-install-devtron-without-integrations) | Dashboard + Resource Browser + Core operator configurations | A unified view of Helm apps, FluxCD apps, ArgoCD apps, and their related K8s resources |
+| [**With CI/CD**](devtron-oss.md#command-to-install-devtron-with-ci-cd)                               | Everything in Minimal + Build and Deploy (CI/CD) module     | You need a complete CI-CD pipeline for your custom apps (a.k.a Devtron Apps)           |
+| [**With CI/CD + GitOps (Argo CD)**](devtron-oss.md#command-2)                                        | Everything in CI/CD + GitOps (Argo CD) module               | You need automated, Git-driven deployments                                             |
 
 {% hint style="success" %}
 #### Not Sure What To Choose?
@@ -70,7 +70,7 @@ helm repo update devtron
 
 {% tabs %}
 {% tab title="Minimal (Dashboard Only)" %}
-#### Command
+#### Command to Install Devtron without Integrations
 
 ```bash
 helm install devtron devtron/devtron-operator \
@@ -79,7 +79,7 @@ helm install devtron devtron/devtron-operator \
 {% endtab %}
 
 {% tab title="With CI/CD" %}
-#### Command
+#### Command to install Devtron with CI/CD
 
 ```bash
 helm install devtron devtron/devtron-operator \
@@ -89,7 +89,7 @@ helm install devtron devtron/devtron-operator \
 {% endtab %}
 
 {% tab title="With CI/CD + GitOps (Argo CD)" %}
-#### Command
+#### Command to install Devtron with CI/CD + GitOps (ArgoCD)
 
 ```bash
 helm install devtron devtron/devtron-operator \
