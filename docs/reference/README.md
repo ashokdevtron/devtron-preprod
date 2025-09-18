@@ -13,5 +13,4 @@ This section brings together all the extra resources you might need beyond the b
 * [Devtron Kubernetes Desktop Client](../setup/install/install-devtron-Kubernetes-client.md) - Try Devtron locally without touching your cluster.
 * [Installation Walkthrough on EKS, AKS, GKE](../setup/install/demo-tutorials.md) - Hands-on installation demos on EKS, AKS, and GKE.
 * [Backup for Disaster Recovery](../setup/install/devtron-backup.md) - Protect your data and recover quickly.
-* [Uninstall Devtron](../resources/uninstall-devtron.md) - Cleanly remove Devtron from your cluster if needed.
 * [FAQs](../setup/install/faq-on-installation.md) - Answers to common installation questions.
