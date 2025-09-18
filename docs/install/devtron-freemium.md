@@ -1,4 +1,4 @@
-# Install Devtron Enterprise (Freemium)
+# Install Devtron Freemium
 
 ## Introduction
 
@@ -15,7 +15,7 @@ With Devtron Freemium, you can access all the enterprise features limited to add
 #### Already using Devtron OSS?
 
 This guide is intended for fresh installation of **Devtron Freemium**.\
-If you're currently using the [open-source (OSS) version of Devtron](devtron-oss.md), we **do not recommend** upgrading your existing setup to Devtron Freemium.
+If you're currently using the [open-source (OSS) version of Devtron](../setup/install/devtron-oss.md), we **do not recommend** upgrading your existing setup to Devtron Freemium.
 
 Instead, we suggest you to perform a fresh installation of Devtron Freemium on a separate cluster (following the steps below) for the best experience.
 {% endhint %}
@@ -26,7 +26,7 @@ Instead, we suggest you to perform a fresh installation of Devtron Freemium on a
 
 To install Devtron Freemium, go to [Devtron's License Dashboard](https://license.devtron.ai/dashboard/).
 
-You can choose any of the two methods to sign up: [SSO](devtron-enterprise-freemium.md#method-1-sign-up-using-sso) or [Work Email](devtron-enterprise-freemium.md#method-2-sign-up-using-work-email)
+You can choose any of the two methods to sign up: [SSO](devtron-freemium.md#method-1-sign-up-using-sso) or [Work Email](devtron-freemium.md#method-2-sign-up-using-work-email)
 
 ### Method 1: Sign up using SSO
 
@@ -34,7 +34,7 @@ You can choose any of the two methods to sign up: [SSO](devtron-enterprise-freem
 
     ![Figure 1: Selecting SSO Provider](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-license-dashboard-sso-v2.jpg)
 2. Once logged in, the **Devtron License Dashboard** will open.
-3. Under **Tell Us About You**, fill the required basic details, and click **Next** to proceed to [Step 2: Install Devtron](devtron-enterprise-freemium.md#step-2-install-devtron).
+3. Under **Tell Us About You**, fill the required basic details, and click **Next** to proceed to [Step 2: Install Devtron](devtron-freemium.md#step-2-install-devtron).
 
 ### Method 2: Sign up using Work Email
 
@@ -64,7 +64,7 @@ Use this method if your email is not associated with any of the SSO options prov
     ![Figure 5: Email with Login Link](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterprise-license-email.jpg)
 
     Once logged in, the **Devtron License Dashboard** will open.
-5.  Under **Tell Us About You**, fill the required basic details, and click **Next** to proceed to [Step 2: Install Devtron](devtron-enterprise-freemium.md#step-2-install-devtron).
+5.  Under **Tell Us About You**, fill the required basic details, and click **Next** to proceed to [Step 2: Install Devtron](devtron-freemium.md#step-2-install-devtron).
 
     ![Figure 6: Entering the Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-enterprise-license-step-1.jpg)
 
@@ -77,14 +77,14 @@ Use this method if your email is not associated with any of the SSO options prov
 
 We recommend you to install Devtron on a separate Kubernetes cluster, as Devtron Cluster (the one in which Devtron will be installed) might have critical system services. Therefore, it should be kept separate from application workloads. Please ensure that cluster `kubeconfig` is properly configured and available in your system.
 
-See [Additional Installation Resources](../../reference/) for production infra recommendations, air-gapped installs, blob storage, config overrides, backups, uninstallation, and more.
+See [Additional Installation Resources](../reference/) for production infra recommendations, air-gapped installs, blob storage, config overrides, backups, uninstallation, and more.
 {% endhint %}
 
 The commands for installing **Devtron in Full Mode** (with integrations) is directly available on the **Devtron License Dashboard** for supported K8s distributions.
 
 Select your preferred K8s distribution and run the commands shown beneath it: The installation commands first, and then the commands to access the dashboard URL.
 
-After successfully installing Devtron and obtaining the dashboard URL, click **Next** to proceed to [Step 3: Get License Key](devtron-enterprise-freemium.md#step-3-get-license-key)
+After successfully installing Devtron and obtaining the dashboard URL, click **Next** to proceed to [Step 3: Get License Key](devtron-freemium.md#step-3-get-license-key)
 
 {% hint style="info" %}
 #### Using MicroK8s/Kind/K3s/Cloud VMs? Want to Access Dashboard via NodePort? Or Locally from Remote VM?
@@ -151,7 +151,7 @@ The license key you generate will be valid only for your Devtron Freemium instal
 {% hint style="danger" %}
 #### Warning
 
-The license is bound to your Kubernetes cluster and cannot be transferred to another cluster. In case the cluster is deleted, you cannot claim freemium license on a new cluster. In that case, contact [support@devtron.ai](support@devtron.ai).
+The license is bound to your Kubernetes cluster and cannot be transferred to another cluster. In case the cluster is deleted, you cannot claim freemium license on a new cluster. In that case, contact [support@devtron.ai](../setup/install/support@devtron.ai).
 {% endhint %}
 
 5.  Go back to your **Devtron Dashboard URL** page. Paste your license key under the **License Key** field, and click **Activate**.
@@ -164,7 +164,7 @@ The license is bound to your Kubernetes cluster and cannot be transferred to ano
 {% hint style="info" %}
 #### Facing Issues?
 
-Visit the [Troubleshoot](devtron-enterprise-freemium.md#troubleshoot-issues) section to identify the issue or connect with [Devtron Support](support@devtron.ai).
+Visit the [Troubleshoot](devtron-freemium.md#troubleshoot-issues) section to identify the issue or connect with [Devtron Support](../setup/install/support@devtron.ai).
 {% endhint %}
 
 ***
@@ -184,7 +184,7 @@ Visit the [Troubleshoot](devtron-enterprise-freemium.md#troubleshoot-issues) sec
 {% hint style="warning" %}
 #### Next Recommended Action
 
-After the initial login, we recommend you set up an [Single Sign-On (SSO) service](../../user-guide/global-configurations/sso-login.md) like Google, GitHub, etc., and then [add other members](../../user-guide/global-configurations/authorization/user-access.md#add-users) (including yourself). Thereafter, they can log in using the configured SSO.
+After the initial login, we recommend you set up an [Single Sign-On (SSO) service](../user-guide/global-configurations/sso-login.md) like Google, GitHub, etc., and then [add other members](../user-guide/global-configurations/authorization/user-access.md#add-users) (including yourself). Thereafter, they can log in using the configured SSO.
 {% endhint %}
 
 3.  After a successful login, the **Devtron Dashboard** will open, and you can explore all the enterprise features supported by Devtron Freemium.
@@ -247,7 +247,7 @@ Freemium supports **adding one additional cluster** (the **Devtron cluster** whe
 <summary><strong>Can I convert my existing Devtron OSS setup to Freemium?</strong></summary>
 
 We **don’t recommend** converting an existing OSS setup. For the best experience, perform a **fresh Freemium installation**.\
-Refer [Step 2: Install Devtron](devtron-enterprise-freemium.md#step-2-install-devtron) for the installation.
+Refer [Step 2: Install Devtron](devtron-freemium.md#step-2-install-devtron) for the installation.
 
 </details>
 
