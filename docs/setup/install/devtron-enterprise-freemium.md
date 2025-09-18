@@ -48,7 +48,7 @@ Use this method if your email is not associated with any of the SSO options prov
     ![Figure 3: Entering Email](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-license-dashboard-enter-email-v2.jpg)
 3.  A login link will be sent to the email address provided by you. If you do not receive the link, you can resend it after 30 seconds.
 
-    **Note:** Your login link is valid only for 10 minutes.
+    **Note:** Your login link will be valid only for 10 minutes.
 
     ![Figure 4: Sending Login Link](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/license-dashboard-resend-email-v2.jpg)
 

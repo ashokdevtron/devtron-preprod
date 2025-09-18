@@ -24,7 +24,7 @@ Begin with the **Minimal** version. You can always install CI/CD and GitOps inte
 
 * Kubernetes cluster v1.16 or later (cloud or local)
 * [Helm v3.8+ installed](https://helm.sh/docs/intro/install/)
-* For production cases, fulfill the [Infrastructure Recommendations](https://docs.devtron.ai/prod-infra)
+* For production cases, fulfill the [Infrastructure Recommendations](prod-infra.md)
 
 {% hint style="warning" %}
 #### Cluster created on AWS? Is your EKS version 1.23 or above?
@@ -195,7 +195,8 @@ minikube service devtron-service --namespace devtroncd
 ## Step 4: Log in to Devtron
 
 1. From your browser, visit the dashboard URL (obtained in the previous step) to view the login page of Devtron.
-2.  Enter **`admin`** in the username. Run the below command to get its password.
+2. Enter **`admin`** in the username.&#x20;
+3.  Run the below command to get its password.
 
     ```bash
     kubectl -n devtroncd get secret devtron-secret \
