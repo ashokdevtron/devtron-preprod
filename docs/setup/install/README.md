@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Devtron can be installed on any [Kubernetes cluster](../getting-started/getting-started.md#create-a-kubernetes-cluster) of your choice. You can choose between **Devtron OSS** (open-source, free) and **Devtron Enterprise (Freemium)**, which unlocks enterprise features at no cost (limited to 1 additional cluster).
+Devtron can be installed on any [Kubernetes cluster](../getting-started/getting-started.md#create-a-kubernetes-cluster) of your choice. You can choose between **Devtron OSS** (open-source, free) and **Devtron Enterprise** (Freemium), which unlocks enterprise features at no cost (limited to 1 additional cluster).
 
 | Edition                                                                     | Description                                                                     |
 | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
