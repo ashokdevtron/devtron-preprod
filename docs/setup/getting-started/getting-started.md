@@ -16,7 +16,7 @@ Refer [Devtron's Production Infra Recommendations](../install/prod-infra.md).
 
 You can create any [Kubernetes cluster](https://kubernetes.io/docs/tutorials/kubernetes-basics/create-cluster/) (preferably K8s version 1.16 or higher) for installing Devtron.
 
-You can create a cluster using one of the following cloud providers as per your requirements:
+<!-- You can create a cluster using one of the following cloud providers as per your requirements: -->
 
 | Cloud Provider                     | Description                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
