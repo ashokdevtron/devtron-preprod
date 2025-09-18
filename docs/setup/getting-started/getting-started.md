@@ -11,7 +11,7 @@ Devtron is installed over a Kubernetes cluster. Once you create a Kubernetes clu
 {% hint style="info" %}
 **Setting up a production-grade infrastructure?**
 
-Refer [Devtron's Production Infra Recommendations](../install/prod-infra.md).
+Refer [Devtron's Production Infra Recommendations](../install/prod-infra.md)
 {% endhint %}
 
 You can create any [Kubernetes cluster](https://kubernetes.io/docs/tutorials/kubernetes-basics/create-cluster/) (preferably K8s version 1.16 or higher) for installing Devtron.
