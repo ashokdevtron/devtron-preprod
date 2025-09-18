@@ -52,7 +52,7 @@ kubectl apply -f https://raw.githubusercontent.com/rancher/local-path-provisione
 {% hint style="info" %}
 #### Need Advanced Help?
 
-See [Additional Installation Resources](../../reference/) for production infra recommendations, air-gapped installs, blob storage, config overrides, backups, uninstallation, and more.
+See [Additional Installation Resources](../../reference/) for production infra recommendations, air-gapped installs, blob storage, config overrides, backups, and more.
 {% endhint %}
 
 ***

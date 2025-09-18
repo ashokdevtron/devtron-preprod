@@ -77,7 +77,7 @@ Use this method if your email is not associated with any of the SSO options prov
 
 We recommend you to install Devtron on a separate Kubernetes cluster, as Devtron Cluster (the one in which Devtron will be installed) might have critical system services. Therefore, it should be kept separate from application workloads. Please ensure that cluster `kubeconfig` is properly configured and available in your system.
 
-See [Additional Installation Resources](../reference/) for production infra recommendations, air-gapped installs, blob storage, config overrides, backups, uninstallation, and more.
+See [Additional Installation Resources](../reference/) for production infra recommendations, air-gapped installs, blob storage, config overrides, backups, and more.
 {% endhint %}
 
 The commands for installing **Devtron in Full Mode** (with integrations) is directly available on the **Devtron License Dashboard** for supported K8s distributions.
