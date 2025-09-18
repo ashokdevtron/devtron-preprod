@@ -196,7 +196,7 @@ minikube service devtron-service --namespace devtroncd
 
 1. From your browser, visit the dashboard URL (obtained in the previous step) to view the login page of Devtron.
 2. Enter **`admin`** in the username.&#x20;
-3.  Run the below command to get its password.
+3.  Run the below command to get your password.
 
     ```bash
     kubectl -n devtroncd get secret devtron-secret \
