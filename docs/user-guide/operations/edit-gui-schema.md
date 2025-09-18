@@ -1,53 +1,43 @@
-# Configure GUI Schema for Editing Manifest
+# Configure GUI Schema
 
 ## Introduction [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
 In Devtron, you can create [CRDs](../../reference/glossary.md#crd) for defining the GUI schema. Your GUI schema will be used to determine the fields displayed to the user when they [edit the manifest in GUI mode](../resource-browser/manage-resources.md#edit-using-gui).
 
 {% hint style="warning" %}
+#### Who Can Perform This Action?
 
-### Who Can Perform This Action?
-
-Only a [Super-Admin](../global-configurations/authorization/user-access.md#grant-super-admin-permission) can configure GUI Schema. 
-
+Only a [Super-Admin](../global-configurations/authorization/user-access.md#grant-super-admin-permission) can configure GUI Schema.
 {% endhint %}
 
----
+***
 
 ## Editing GUI Schema
 
 1. Go to **Resource Browser** and select your cluster.
-
-2. Use the searchbox labelled 'Jump to Kind' and search for `Guischema`.
+2.  Use the searchbox labelled 'Jump to Kind' and search for `Guischema`.
 
     ![Figure 1: Searching GUI Schema](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/search-gui-schema.gif)
-
-3. Click the GUI schema you wish to edit. In case no GUI schema exists, you may [create a GUI schema](#create-your-own-gui-schema) for your resource kind.
+3.  Click the GUI schema you wish to edit. In case no GUI schema exists, you may [create a GUI schema](edit-gui-schema.md#create-your-own-gui-schema) for your resource kind.
 
     ![Figure 2: Click GUI Schema](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/click-schema.gif)
-
-4. Click **Edit Live Manifest** to modify the YAML.
+4.  Click **Edit Live Manifest** to modify the YAML.
 
     ![Figure 3: Edit Live Manifest](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/edit-live-manifest.gif)
-
-5. Locate the `schema` object and customize it according to your requirements.
+5.  Locate the `schema` object and customize it according to your requirements.
 
     ![Figure 4: Modifying Schema](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/locate-schema.gif)
-
 6. Click **Apply Changes**.
 
----
+***
 
 ## Create your own GUI Schema
 
 1. Go to **Resource Browser** and select your cluster.
-
 2. Click **Create Resource** at the top.
-
 3. Use the following template and define your schema in the `schema` object, also specify the resource kinds in `applyTo`. Once done, click **Apply**.
 
 {% code title="GUI Schema for Pod Manifest" overflow="wrap" lineNumbers="true" %}
-
 ```yml
 apiVersion: crd.devtron.ai/alpha1
 kind: GuiSchema
@@ -138,5 +128,4 @@ schema: |
     }
     }
 ```
-
 {% endcode %}

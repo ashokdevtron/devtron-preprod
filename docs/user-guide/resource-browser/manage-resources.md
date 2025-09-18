@@ -1,7 +1,8 @@
-# Discover and Manage Resources 
+# Discover and Manage Resources
 
 {% hint style="warning" %}
-### Who Can Perform This Action?
+#### Who Can Perform This Action?
+
 Users need to have [access to the cluster](../global-configurations/authorization/user-access.md#kubernetes-resources-permissions) to discover resources.
 {% endhint %}
 
@@ -15,7 +16,7 @@ You can use the searchbox to browse the resources.
 
 Moreover, you can use filters that allow you to quickly filter your workload as per labels, field selectors, or [CEL expression](https://kubernetes.io/docs/reference/using-api/cel/) as shown below.
 
-{% embed url="https://www.youtube.com/watch?v=E-V-ELCXtfs" caption="Filtering Workloads in Devtron" %}
+{% embed url="https://www.youtube.com/watch?v=E-V-ELCXtfs" %}
 
 ### Resource Kinds
 
@@ -38,16 +39,17 @@ Further resources in the cluster are grouped under the following categories:
 
 ![Figure 2: Resources within Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/cluster-resources.jpg)
 
----
+***
 
-## Edit a Manifest 
+## Edit a Manifest
 
 {% hint style="warning" %}
-### Who Can Perform This Action?
+#### Who Can Perform This Action?
+
 User needs to be an [admin of the Kubernetes resource](../global-configurations/authorization/user-access.md#kubernetes-resources-permissions) to edit its manifest. The fields/paths locked by superadmins in the manifest cannot be edited by non-superadmins.
 {% endhint %}
 
-You can edit the [manifest](../../reference/glossary.md#manifest) of a Kubernetes object. This can be for fixing errors, scaling resources, or changing configuration. Moreover, you can edit a manifest [using YAML](#edit-using-yaml) or [GUI](#edit-using-gui), as per your convenience.
+You can edit the [manifest](../../reference/glossary.md#manifest) of a Kubernetes object. This can be for fixing errors, scaling resources, or changing configuration. Moreover, you can edit a manifest [using YAML](manage-resources.md#edit-using-yaml) or [GUI](manage-resources.md#edit-using-gui), as per your convenience.
 
 ### Edit using YAML
 
@@ -58,11 +60,12 @@ You can edit the [manifest](../../reference/glossary.md#manifest) of a Kubernete
 ![Figure 3b: Editing Manifest (Using GUI)](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/edit-live-manifest-gui.gif)
 
 {% hint style="info" %}
-### Note
+#### Note
+
 The fields displayed in GUI mode will be as per the GUI schema configured by the operator for that resource kind.
 {% endhint %}
 
----
+***
 
 ## View Events
 
@@ -73,7 +76,8 @@ You can monitor activities like creation, deletion, updation, scaling, or errors
 ### AI-assistance on Events [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
 {% hint style="info" %}
-### How to Configure Devtron Intelligence?
+#### How to Configure Devtron Intelligence?
+
 Refer [Devtron Intelligence](../devtron-intelligence.md) to enable this feature.
 {% endhint %}
 
@@ -81,12 +85,13 @@ For events with warnings, you can take the assistance of AI. Clicking the **Expl
 
 ![Figure 4b: AI-assistance](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/ai-assist-eventfix.gif)
 
----
+***
 
 ## Delete a Resource
 
 {% hint style="warning" %}
-### Who Can Perform This Action?
+#### Who Can Perform This Action?
+
 User needs to be an [admin of the Kubernetes resource](../global-configurations/authorization/user-access.md#kubernetes-resources-permissions) to delete it.
 {% endhint %}
 
@@ -94,18 +99,19 @@ You can delete an unwanted resource if it is orphaned and no longer required by 
 
 ![Figure 5: Deleting a Resource](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/delete.gif)
 
----
+***
 
 ## Create a Resource
 
 {% hint style="warning" %}
-### Who Can Perform This Action?
+#### Who Can Perform This Action?
+
 User needs to be an [admin of the Kubernetes resources](../global-configurations/authorization/user-access.md#kubernetes-resources-permissions) to create resources.
 {% endhint %}
 
 You can create one or more [Kubernetes objects](../../reference/glossary.md#objects) in your cluster using YAML. In case you wish to create multiple objects, separate each resource definition by three dashes (---).
 
-Once you select a cluster in Resource Browser, click **+ Create Resource**, and add the resource definition.  
+Once you select a cluster in Resource Browser, click **+ Create Resource**, and add the resource definition.
 
 In the below example, we have created a simple pod named `nginx`:
 
@@ -139,7 +145,7 @@ spec:
 ```
 {% endcode %}
 
----
+***
 
 ## Bulk Actions on Resources [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
@@ -154,6 +160,7 @@ You can use the checkbox to select the resources/workloads you wish to delete or
 ![Figure 7b: Restarting Workloads in Bulk](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/bulk-restart-resources.gif)
 
 {% hint style="info" %}
-### Note
+#### Note
+
 You can only restart certain workloads such as Deployment, DaemonSet, StatefulSet, etc. and not all resource types.
 {% endhint %}

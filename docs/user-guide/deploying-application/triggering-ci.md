@@ -1,4 +1,4 @@
-# Triggering CI Pipelines
+# Triggering CI
 
 To trigger the CI pipeline, first you need to select a Git commit. To select a Git commit, click the **Select Material** button present on the CI pipeline.
 
@@ -10,13 +10,14 @@ Once clicked, a list will appear showing various commits made in the repository,
 
 CI Pipelines with automatic trigger enabled are triggered immediately when a new commit is made to the git branch. If the trigger for a build pipeline is set to manual, it will not be automatically triggered and requires a manual trigger.
 
----
+***
 
 ## Partial Cloning Feature [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
 CI builds can be time-consuming for large repositories, especially for enterprises. However, Devtron's partial cloning feature significantly increases cloning speed, reducing the time it takes to clone your source code and leading to faster build times.
 
 **Advantages**
+
 * Smaller image sizes
 * Reduced resource usage and costs
 * Faster software releases
@@ -28,12 +29,13 @@ The **Refresh** icon updates the Git Commits section in the CI Pipeline by fetch
 
 The **Ignore Cache** option ignores the previous build cache and creates a fresh build. If selected, will take a longer build time than usual. [Click here](../creating-application/workflow/ci-pipeline.md#docker-layer-caching) to read more about controlling cache behavior in Devtron.
 
----
+***
 
 ## Passing Build Parameters [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
 {% hint style="warning" %}
-### Who Can Perform This Action?
+#### Who Can Perform This Action?
+
 Users need to have [Build & deploy permission](../global-configurations/authorization/user-access.md#devtron-apps-permissions) or above (along with access to the environment and application) to pass build parameters.
 {% endhint %}
 
@@ -41,27 +43,25 @@ If you wish to pass runtime parameters for a build job, you can provide key-valu
 
 **Steps**
 
-1. Go to the **Parameters** tab available on the screen where you select the commit.
+1.  Go to the **Parameters** tab available on the screen where you select the commit.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/triggering-ci/build-parameter-tab.jpg)
-
-2. Click **+ Add parameter**.
+2.  Click **+ Add parameter**.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/triggering-ci/add-parameter.jpg)
-
-3. Enter your key-value pair as shown below. 
+3.  Enter your key-value pair as shown below.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/triggering-ci/key-value.jpg)
 
-    <br /> Similarly, you may add more than one key-value pair by using the **+ Add Parameter** button.
-
+    \
+    Similarly, you may add more than one key-value pair by using the **+ Add Parameter** button.
 4. Click **Start Build**.
 
 {% hint style="info" %}
 In case you trigger builds in bulk, you can consider passing build parameters in [Application Groups](../application-groups.md).
 {% endhint %}
 
----
+***
 
 ## Fetching Logs and Reports
 
@@ -79,6 +79,6 @@ By selecting the `Artifacts` option, you can download reports related to the tas
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/triggering-ci/tags-and-artifacts.jpg)
 
-To check for any vulnerabilities in the build image, click on `Security`. Please note that vulnerabilities will only be visible if you have enabled the `Scan for vulnerabilities` option in the advanced options of the CI pipeline before building the image. For more information about this feature, please refer to this [documentation](../../user-guide/security-features.md).
+To check for any vulnerabilities in the build image, click on `Security`. Please note that vulnerabilities will only be visible if you have enabled the `Scan for vulnerabilities` option in the advanced options of the CI pipeline before building the image. For more information about this feature, please refer to this [documentation](../security-features.md).
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/triggering-ci/security-scan-report.jpg)

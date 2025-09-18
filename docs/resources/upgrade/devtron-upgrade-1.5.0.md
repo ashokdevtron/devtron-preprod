@@ -1,4 +1,4 @@
-# Upgrade Devtron to 1.5.0
+# Upgrade to 1.5.0
 
 This document outlines the step-by-step process to be followed before upgrading Devtron to version **1.5.0**.
 
@@ -12,15 +12,15 @@ The upgrade process consists of three sequential Kubernetes jobs:
 
 After the completion of the above jobs, you may proceed to upgrade Devtron using the UI or command line.
 
----
+***
 
 ## Prerequisites
 
-* Ensure that you have [deployed the **devtron-backups** chart](../install/devtron-backup.md) and that at least one backup has been pushed successfully. [Click here](https://github.com/devtron-labs/charts/blob/main/charts/devtron-backups/README.md) to know more about the backups chart.
+* Ensure that you have [deployed the **devtron-backups** chart](../../setup/install/devtron-backup.md) and that at least one backup has been pushed successfully. [Click here](https://github.com/devtron-labs/charts/blob/main/charts/devtron-backups/README.md) to know more about the backups chart.
 * You must have administrative access to the cluster where Devtron is running, along with `kubectl` configured.
 * PVC creation must not be blocked by any policy. If it is, exclude the `devtroncd` namespace from it.
 
----
+***
 
 ## Steps
 
@@ -34,6 +34,7 @@ kubectl apply -f https://raw.githubusercontent.com/devtron-labs/utilities/refs/h
 ```
 
 This job will:
+
 1. Create a ConfigMap named `devtron-postgres-upgrade` in the `devtroncd` namespace.
 2. Determine the StorageClass and size of the existing PostgreSQL PVC.
 3. Create a new PVC named `devtron-db-upgrade-pvc` with additional storage (+5Gi).
@@ -47,10 +48,10 @@ kubectl logs -f job/devtron-pre-upgrade -n devtroncd
 
 Wait for this job to complete successfully before proceeding.
 
-
 ### 2. Monitor the 'upgrade-init' job
 
 The `devtron-upgrade-init` job is automatically triggered by the `devtron-pre-upgrade` job:
+
 1. It scales down all Devtron components to ensure database consistency.
 2. Terminates active database connections.
 3. Starts the Postgres migration process.
@@ -63,7 +64,6 @@ kubectl logs -f job/devtron-upgrade-init -n devtroncd
 
 Ensure this job completes successfully before proceeding to the next step.
 
-
 ### 3. Apply the 'upgrade' job
 
 Once the backup is confirmed, apply the final upgrade job:
@@ -73,6 +73,7 @@ kubectl apply -f https://raw.githubusercontent.com/devtron-labs/utilities/refs/h
 ```
 
 This job will:
+
 1. Verify if the `devtron-upgrade-init` job was successful.
 2. Extract any nodeSelectors or tolerations from the existing PostgreSQL StatefulSet.
 3. Remove PostgreSQL 11 components.
@@ -86,7 +87,7 @@ To monitor the progress of this job:
 kubectl logs -f job/devtron-upgrade -n devtroncd
 ```
 
----
+***
 
 ## Verify the Upgrade
 
@@ -102,7 +103,7 @@ kubectl get configmap devtron-postgres-upgrade -n devtroncd -o jsonpath="{.data.
 
 The value of `POSTGRES_MIGRATED` should be "14" if the migration was successful.
 
----
+***
 
 ## Potential Issues and Troubleshooting
 
@@ -117,14 +118,13 @@ kubectl get configmap devtron-postgres-upgrade -n devtroncd -o yaml
 Look for any entries with "ERROR" in the keys.
 
 2. To reapply the devtron-upgrade-init job, delete the PVC named `devtron-db-upgrade-pvc`, recreate it with the same configurations and then reapply the `devtron-upgrade-init` job.
-
 3. If the `devtron-upgrade-init` job is in a pending state, check for the PVC named `devtron-db-upgrade-pvc`, ensure that the PVC is successfully created.
 
----
+***
 
 ## Next Steps
 
-Once the database migration is complete, you can proceed with upgrading the Devtron application through the UI as mentioned in the final message of the upgrade job. Alternatively, you may use the [upgrade commands](#upgrade-commands) mentioned below.
+Once the database migration is complete, you can proceed with upgrading the Devtron application through the UI as mentioned in the final message of the upgrade job. Alternatively, you may use the [upgrade commands](devtron-upgrade-1.5.0.md#upgrade-commands) mentioned below.
 
 ### Upgrade Commands
 

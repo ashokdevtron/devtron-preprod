@@ -6,7 +6,7 @@ An ideal deployment workflow may consist of multiple stages (e.g., SIT, UAT, Pro
 
 ![Figure 1: Workflow on Devtron](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/image-promotion/sample-cd-workflow.jpg)
 
-If you have built such a [workflow](../creating-application/workflow/README.md), your CI image will sequentially traverse and deploy to each environment until it reaches the target environment. However, if there's a critical issue you wish to address urgently (through a hotfix) on production, navigating the standard workflow might feel slow and cumbersome.
+If you have built such a [workflow](../creating-application/workflow/), your CI image will sequentially traverse and deploy to each environment until it reaches the target environment. However, if there's a critical issue you wish to address urgently (through a hotfix) on production, navigating the standard workflow might feel slow and cumbersome.
 
 Therefore, Devtron offers a feature called 'Image Promotion Policy' that allows you to directly promote an image to the target environment, bypassing the intermediate stages in your workflow including:
 
@@ -15,13 +15,13 @@ Therefore, Devtron offers a feature called 'Image Promotion Policy' that allows 
 
 ![Figure 2: Promoting an Image](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/image-promotion/image-promotion-visual.jpg)
 
-
----
+***
 
 ## Creating an Image Promotion Policy
 
 {% hint style="warning" %}
-### Who Can Perform This Action?
+#### Who Can Perform This Action?
+
 Users need to have super-admin permission to create an image promotion policy.
 {% endhint %}
 
@@ -30,6 +30,7 @@ You can create a policy using our APIs or through Devtron CLI. To get the latest
 Here is the CLI approach:
 
 **Syntax**:
+
 ```
 devtctl create imagePromotionPolicy \
     --name="example-policy" \
@@ -57,90 +58,19 @@ devtctl create imagePromotionPolicy \
 
 {% hint style="info" %}
 If an image matches both pass and fail conditions, the priority of the fail condition will be higher. Therefore, such image will NOT be eligible for promotion to the target environment.
-{% endhint %}  
-
-{% hint style="info" %}
-If you don't define both pass and fail conditions, all images will be eligible for promotion.
-{% endhint %}  
-
----
-
-
-<!-- {% hint style="warning" %}
-### Who Can Perform This Action?
-Users need to have super-admin permission to create an image promotion policy.
 {% endhint %}
 
-1. Go to **Global Configurations** → **Image Promotion Policy**.
-
-2. Click **Create Policy** on the top-right.
-
-3. Give a name to the policy and write a brief description, preferably explaining what it does.
-
-4. Under **Image Filter Condition**, you can enter the conditions which your image promotion should be subjected to (e.g., *`branchName.startsWith('hotfix')`*) 
-
-{% hint style="info" %}
-Use **View filter criteria** to check the supported variables.
-{% endhint %}  
-
-5. You can specify either a pass condition, fail condition, or both conditions using [Common Expression Language (CEL)](https://github.com/google/cel-spec/blob/master/doc/langdef.md):
-    * **Pass Condition**: Images that match this condition will be eligible for promotion to the target environment.
-    * **Fail Condition**: Images that match this condition will NOT be eligible for promotion to the target environment.
-
-{% hint style="info" %}
-If an image matches both pass and fail conditions, the priority of the fail condition will be higher. Therefore, such image will NOT be eligible for promotion to the target environment.
-{% endhint %}  
-
 {% hint style="info" %}
 If you don't define both pass and fail conditions, all images will be eligible for promotion.
-{% endhint %}  
+{% endhint %}
 
-6. (Optional) If required, you can setup approval requirements for this policy. If **Approval for Image Promotion Policy** is enabled, an [approval will be required for an image]((#approving-image-promotion-request)) to be directly promoted to the target environment. Only the users having 'Artifact promoter' role (for the application and environment) will be able to approve the image promotion request.
-
- * **Number of Approvals (1-6)**: Specify the number of approvals required to promote an image. This can vary from one approval (minimum) to six approvals (maximum).
-
- * **Checkboxes for who can approve**: As a super-admin, you also have options to control the approval of image promotion and its deployment. These are available in the form of checkboxes.
-
-    ![Figure 3: Controlling Approvals](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/image-promotion/control-approval.jpg)
-
-6. Click **Save Changes**.
-
---- 
+***
 
 ## Applying an Image Promotion Policy
 
 {% hint style="warning" %}
-### Who Can Perform This Action?
-Users need to have super-admin permission to apply an image promotion policy.
-{% endhint %}
+#### Who Can Perform This Action?
 
-Here, you can decide the application(s) and environment(s) for which image promotion is allowed. 
-
-1. Go to the **Apply Policy** tab.
-
-2. Click the `Promotion Policy` dropdown next to the application, and choose the policy you wish to apply.
-
-3. A confirmation dialog box would appear. Click **Confirm**.
-
-### Performing Bulk Action
-
-1. You can also apply a policy to multiple applications and environments ('App+Env' combinations) in bulk.
-
-2. Simply use the checkboxes to select the desired application + environment combinations.
-
-3. You will see a draggable floating widget. Click **Change Policy** in the widget and select a desired policy to be applied to all your selections.
-
-Moreover, there are three filters available to make the selections easier for you:
-* Application
-* Environment
-* Policy
-
---- -->
-
-## Applying an Image Promotion Policy
-
-{% hint style="warning" %}
-### Who Can Perform This Action?
 Users need to have super-admin permission to apply an image promotion policy.
 {% endhint %}
 
@@ -166,48 +96,43 @@ spec:
 ```
 {% endcode %}
 
-Here, `applicationEnvironments` is a dictionary that contains the application names (app1, app2) and the corresponding environment names (env-demo/env-staging) where the policy will apply. In the `applyToPolicyName` key, enter the value of the `name` argument you used earlier while [creating the policy](#creating-an-image-promotion-policy).
+Here, `applicationEnvironments` is a dictionary that contains the application names (app1, app2) and the corresponding environment names (env-demo/env-staging) where the policy will apply. In the `applyToPolicyName` key, enter the value of the `name` argument you used earlier while [creating the policy](image-promotion-policy.md#creating-an-image-promotion-policy).
 
-* Apply the policy using the following CLI command:
+*   Apply the policy using the following CLI command:
 
     ```
     devtctl apply policy -p="path/to/applyPolicy.yaml"
     ```
-
 
 ## Result
 
 ### Promoting Image to Target Environment
 
 {% hint style="warning" %}
-### Who Can Perform This Action?
+#### Who Can Perform This Action?
+
 Users with build & deploy permission or above (for the application and target environment) can promote an image if the image promotion policy is enabled.
 {% endhint %}
 
-Here, you can promote images to the target environment(s).  
+Here, you can promote images to the target environment(s).
 
 1. Go to the **Build & Deploy** tab of your application.
-
-2. Click the **Promote** button next to the workflow in which the you wish to promote the image. Please note, the button will appear only if image promotion is allowed for any environment used in that workflow.
+2.  Click the **Promote** button next to the workflow in which the you wish to promote the image. Please note, the button will appear only if image promotion is allowed for any environment used in that workflow.
 
     ![Figure 3: Promote Button](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/image-promotion/promote-button.jpg)
-
-3. In the `Select Image` tab, you will see a list of images. Use the **Show Images from** dropdown to filter the list and choose the image you wish to promote. This can be either be an image from the CI pipeline or one that has successfully passed all stages (e.g., pre, post, if any) of that particular environment.
+3.  In the `Select Image` tab, you will see a list of images. Use the **Show Images from** dropdown to filter the list and choose the image you wish to promote. This can be either be an image from the CI pipeline or one that has successfully passed all stages (e.g., pre, post, if any) of that particular environment.
 
     ![Figure 4: Selecting an Image](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/image-promotion/show-images.jpg)
-
 4. Use the **SELECT** button on the image, and click **Promote to...**
-
-5. Select one or more target environments using the checkbox.
+5.  Select one or more target environments using the checkbox.
 
     ![Figure 5: Selecting the Destination Environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/image-promotion/selecting-env.jpg)
-
-6. Click **Promote Image**. 
+6. Click **Promote Image**.
 
 The image's promotion to the target environment now depends on the approval settings in the image promotion policy. If the super-admin has enforced an approval process, the image requires the necessary number of approvals before promotion. On the other hand, if the super-admin has not enforced approval, the image will be automatically promoted since there is no request phase involved.
 
 {% hint style="warning" %}
-In case you have configured [SES or SMTP on Devtron](../global-configurations/manage-notification.md#notification-configurations), an email notification will be sent to the approvers.
+In case you have configured [SES or SMTP on Devtron](manage-notification.md#notification-configurations), an email notification will be sent to the approvers.
 {% endhint %}
 
 7. If approval(s) are required for image promotion, you may check the status of your request in the `Approval Pending` tab.
@@ -215,15 +140,14 @@ In case you have configured [SES or SMTP on Devtron](../global-configurations/ma
 ### Approving Image Promotion Request
 
 {% hint style="warning" %}
-### Who Can Perform This Action?
-Only the users having [Artifact promoter](./user-access.md#devtron-apps-permissions) role (for the application and environment) or superadmin permissions will be able to approve the image promotion request.
-{% endhint %} 
+#### Who Can Perform This Action?
+
+Only the users having [Artifact promoter](user-access.md#devtron-apps-permissions) role (for the application and environment) or superadmin permissions will be able to approve the image promotion request.
+{% endhint %}
 
 1. Go to the **Build & Deploy** tab of your application.
-
 2. Click the **Promote** button next to the workflow.
-
-3. Go to the `Approval Pending` tab to see the list of images requiring approval. By default, it shows a list of all images whose promotion request is pending with you. 
+3.  Go to the `Approval Pending` tab to see the list of images requiring approval. By default, it shows a list of all images whose promotion request is pending with you.
 
     ![Figure 6: Checking Pending Approvals](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/image-promotion/pending-approvals.jpg)
 
@@ -232,7 +156,6 @@ All the images will show the source from which it is being promoted, i.e., CI st
 {% endhint %}
 
 4. Click **Approve for...** to choose the target environments to which it can be promoted.
-
 5. Click **Approve**.
 
 You can also use the **Show requests** dropdown to filter the image promotion requests for a specific target environment.
@@ -246,13 +169,14 @@ If there are pending promotion requests, you can approve them as shown below:
 ### Deploying a Promoted Image
 
 {% hint style="warning" %}
-### Who Can Perform This Action?
+#### Who Can Perform This Action?
+
 Users with build & deploy permission or above for the application and environment can deploy the promoted image.
 {% endhint %}
 
-If a user has approved the promotion request for an image, they may or may not be able to deploy depending upon the [policy configuration](#creating-an-image-promotion-policy).
+If a user has approved the promotion request for an image, they may or may not be able to deploy depending upon the [policy configuration](image-promotion-policy.md#creating-an-image-promotion-policy).
 
-However, a promoted image does not automatically qualify as a deployable image. It must fulfill all configured requirements ([Image Deployment Approval](../creating-application/workflow/cd-pipeline.md#manual-approval-for-deployment), [Filter Conditions](./filter-condition.md), etc.) of the target environment for it to be deployed.
+However, a promoted image does not automatically qualify as a deployable image. It must fulfill all configured requirements ([Image Deployment Approval](../creating-application/workflow/cd-pipeline.md#manual-approval-for-deployment), [Filter Conditions](filter-condition.md), etc.) of the target environment for it to be deployed.
 
 In the **Build & Deploy** tab of your application, click **Select Image** for the CD pipeline, and choose your promoted image for deployment.
 

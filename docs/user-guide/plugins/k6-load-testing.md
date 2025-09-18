@@ -8,19 +8,21 @@ K6 is an open-source tool and cloud service that makes load testing easy for dev
 2. Click **+ Add task**.
 3. Select **K6 Load Testing** from **PRESET PLUGINS**.
 
-
 * Enter a relevant name in the `Task name` field. It is a mandatory field.
 * Enter a descriptive message for the task in the `Description` field. It is an optional field.
-* Provide a value for the input variable.<br> Note: The value may be any of the values from the previous build stages, a global variable, or a custom value.</br>
+* Provide a value for the input variable.\
+  Note: The value may be any of the values from the previous build stages, a global variable, or a custom value.\
 
- | Variable | Format | Description |
-| ---- | ---- | ---- |
-| RelativePathToScript | String | Checkout path + script path along with script name |
-| PrometheusUsername | String | Username of Prometheus account |
-| PrometheusApiKey | String | API key of Prometheus account |
-| PrometheusRemoteWriteEndpoint | String | Remote write endpoint of Prometheus account |
-| OutputType | String | `LOG` or `PROMETHEUS` |
 
-* `Trigger/Skip Condition` refers to a conditional statement to execute or skip the task. You can select either:<ul><li>`Set trigger conditions` or</li><li>`Set skip conditions`</li></ul> 
+| Variable                      | Format | Description                                        |
+| ----------------------------- | ------ | -------------------------------------------------- |
+| RelativePathToScript          | String | Checkout path + script path along with script name |
+| PrometheusUsername            | String | Username of Prometheus account                     |
+| PrometheusApiKey              | String | API key of Prometheus account                      |
+| PrometheusRemoteWriteEndpoint | String | Remote write endpoint of Prometheus account        |
+| OutputType                    | String | `LOG` or `PROMETHEUS`                              |
 
+* `Trigger/Skip Condition` refers to a conditional statement to execute or skip the task. You can select either:
+  * `Set trigger conditions` or
+  * `Set skip conditions`
 * Click **Update Pipeline**.

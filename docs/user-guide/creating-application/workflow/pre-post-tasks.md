@@ -8,7 +8,7 @@ The build and deployment pipelines also include a pre stage and a post stage:
 **Examples**: Tasks like code analysis, Jira Issue updation, load testing, security scanning, etc.
 
 * **Build Stage** includes **Pre-build stage** and **Post-build stage**.
-* **Deployment Stage** includes **Pre-deployment** and **Post-deployment**.   
+* **Deployment Stage** includes **Pre-deployment** and **Post-deployment**.
 
 In Devtron, a task is a step within a CI/CD pipeline that runs a specific operation, such as executing a script or running a container image. Tasks can be created using preset plugins or custom scripts, and are executed in sequence to complete the process.
 
@@ -16,13 +16,13 @@ Preset plugins are extensions that allow you to enhance and refine the CI/CD wor
 
 Some plugins are specific to build pipelines (used in **Pre-Build** and **Post-Build** stages), and some plugins are specific to deployment pipelines (used in **Pre-Deployment** and **Post-Deployment** stages), and some plugins are versatile and can be used in both build and deployment pipelines, depending on your use case.
 
----
+***
 
 ## Before you begin
 
-Before you start adding Pre or Post tasks, make sure you have already setup your [Build pipeline](./ci-pipeline.md) or [Deployment pipeline](./cd-pipeline.md).
+Before you start adding Pre or Post tasks, make sure you have already setup your [Build pipeline](ci-pipeline.md) or [Deployment pipeline](cd-pipeline.md).
 
----
+***
 
 ## Creating Pre/Post Tasks
 
@@ -34,31 +34,24 @@ You can create a task either by selecting one of the available preset plugins or
 
 To create a pre/post task, follow the steps below:
 
-1. Navigate to **Configurations** → **Workflow Editor** of your Devtron App. 
-
-2. Select the Build or Deployment pipeline for configuring the pre/post tasks.
+1. Navigate to **Configurations** → **Workflow Editor** of your Devtron App.
+2.  Select the Build or Deployment pipeline for configuring the pre/post tasks.
 
     ![Figure 1: Selecting Workflow](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-workflow-editor.jpg)
-
 3. Based on the pipeline you are editing, follow the steps below to add a task:
- 
-    * **Build pipelines:** On the **Edit build pipeline** window, select the **Pre-Build stage** or **Post-Build stage** tab.
+   *   **Build pipelines:** On the **Edit build pipeline** window, select the **Pre-Build stage** or **Post-Build stage** tab.
 
-        ![Figure 2: Pre/Post-build stages](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-edit-build.jpg)
-  
-    * **Deployment pipelines:** On the **Edit deployment pipeline** window, select the **Pre-Deployment stage** or **Post-Deployment stage** tab.
+       ![Figure 2: Pre/Post-build stages](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-edit-build.jpg)
+   *   **Deployment pipelines:** On the **Edit deployment pipeline** window, select the **Pre-Deployment stage** or **Post-Deployment stage** tab.
 
-        ![Figure 3: Pre/Post-deployment stages](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-edit-deploy.jpg)
+       ![Figure 3: Pre/Post-deployment stages](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-edit-deploy.jpg)
+4.  Select **+ Add task** to add a task.
 
-4. Select **+ Add task** to add a task.
- 
     ![Figure 4: Adding task](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-add-task.jpg)
-
-5. Configure the task using a preset plugin or **Execute custom task**. If you wish, you can add more tasks by clicking on **+ Add task** in the left-side panel.
+5.  Configure the task using a preset plugin or **Execute custom task**. If you wish, you can add more tasks by clicking on **+ Add task** in the left-side panel.
 
     ![Figure 5: Configuring the task](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-configure.jpg)
-
-6. Click **Update Pipeline**. The pre/post task will be executed when you trigger the next build or deployment.
+6.  Click **Update Pipeline**. The pre/post task will be executed when you trigger the next build or deployment.
 
     ![Figure 6: Select 'Update Pipeline'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-update-pipeline.jpg)
 
@@ -75,47 +68,37 @@ To create a task using preset plugins, let's take `Codacy` as an example and con
 To configure a task using the **Codacy** plugin, follow the steps below:
 
 1. Navigate to **Pre-Build stage** and select **+Add task**.
-
-2. Search for `Codacy` in the **Search Plugin** bar and select **Codacy** from the list of plugins. 
+2.  Search for `Codacy` in the **Search Plugin** bar and select **Codacy** from the list of plugins.
 
     * The right-side panel will display the fields specific to the **Codacy** plugin, which are required to be configured.
-
-    * The left-side panel will now shows a task under **Tasks (IN ORDER OF EXECUTION)**, named after the selected plugin(by default), along with its logo.<br>You can change the task's name using the **Task name** field but plugin's logo will remain indicating that it is a preset plugin.
+    * The left-side panel will now shows a task under **Tasks (IN ORDER OF EXECUTION)**, named after the selected plugin(by default), along with its logo.\
+      You can change the task's name using the **Task name** field but plugin's logo will remain indicating that it is a preset plugin.
 
     ![Figure 7: Searching 'Codacy' plugin](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-search-codacy.jpg)
 
     ![Figure 8: Codacy plugin](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-codacy-plugin.jpg)
-
-3. Refer the [Codacy](../../plugins/codacy.md) documentation to configure the **Codacy** fields with appropriate values. You may explore [Plugins documentation](../../plugins/README.md) to configure any of the available plugins. 
-
+3. Refer the [Codacy](../../plugins/codacy.md) documentation to configure the **Codacy** fields with appropriate values. You may explore [Plugins documentation](../../plugins/) to configure any of the available plugins.
 4. After configuring the fields successfully, your task will be created. If you wish, you can add more tasks by clicking on **+ Add task** in the left-side panel.
-
 5. Select **Update pipeline**; The pre/post task will be executed when you trigger the next build or deployment.
 
-Similarly, you can configure any task with a preset plugin in Pre/post-build stages or pre/post-deployment stages. 
+Similarly, you can configure any task with a preset plugin in Pre/post-build stages or pre/post-deployment stages.
 
 ### Execute Custom Task
 
-1. After adding the task, select **Execute custom task**.
-
+1.  After adding the task, select **Execute custom task**.
 
     * The right-side panel will display the fields that are required to be configured in order to create the task.
-
     * The left-side panel will now display a task under **Tasks (IN ORDER OF EXECUTION)**.
-    
-    ![Figure 9: Select 'Execute custom script'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-execute-custom-task.jpg)
 
-2. Enter the Task name (required) and Task Description (optional).
+    ![Figure 9: Select 'Execute custom script'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-execute-custom-task.jpg)
+2.  Enter the Task name (required) and Task Description (optional).
 
     ![Figure 10: Configuring Task](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-custom-task.jpg)
-
 3. Select the **Task type**, it can be `Shell` or `Container Image`.
-
-    * **Shell Tasks**: These execute shell scripts directly within the application runtime environment. In this type of task, you can define inline scripts or use script files from your configured source code.
-
-    * **Container Image Tasks**: These allow you to execute commands and scripts inside a custom Docker container. Instead of using the default environment provided by Devtron, you can specify your own container image with all dependencies and tools required for the tasks. <br> These Tasks run using container in container approach, which means the specified image is pulled and run inside the App pod, thus providing a completely isolated environment.
-
-4. After selecting the **Task type**, you need to configure task-specific fields based on that **Task type**. Refer the [Examples and Use cases](#examples-and-use-cases) to configure both **Shell type** and **Container image** tasks.
+   * **Shell Tasks**: These execute shell scripts directly within the application runtime environment. In this type of task, you can define inline scripts or use script files from your configured source code.
+   * **Container Image Tasks**: These allow you to execute commands and scripts inside a custom Docker container. Instead of using the default environment provided by Devtron, you can specify your own container image with all dependencies and tools required for the tasks.\
+     These Tasks run using container in container approach, which means the specified image is pulled and run inside the App pod, thus providing a completely isolated environment.
+4. After selecting the **Task type**, you need to configure task-specific fields based on that **Task type**. Refer the [Examples and Use cases](pre-post-tasks.md#examples-and-use-cases) to configure both **Shell type** and **Container image** tasks.
 
 ### Examples and Use Cases
 
@@ -125,17 +108,18 @@ Let's take an example of a **Shell task** in the Post-Build stage, that send an 
 
 #### Tasks Configurations
 
-|Field| Values for This Example| Required/Optional | Description|
-| :--- | :--- | :--- | :--- |
-| `Task Name`| `email-notifier`| Required| Enter a name for the task|
-| `Task Description`| `This task sends a email after the build is completed` | Optional | Short description for the task|
-| `Task Type` | `Shell`| Optional| Select the preferred task type |
-| `Script`| Refer the [Script](#script) below| Required| Custom script for executing tasks|
+| Field              | Values for This Example                                | Required/Optional | Description                       |
+| ------------------ | ------------------------------------------------------ | ----------------- | --------------------------------- |
+| `Task Name`        | `email-notifier`                                       | Required          | Enter a name for the task         |
+| `Task Description` | `This task sends a email after the build is completed` | Optional          | Short description for the task    |
+| `Task Type`        | `Shell`                                                | Optional          | Select the preferred task type    |
+| `Script`           | Refer the [Script](pre-post-tasks.md#script) below     | Required          | Custom script for executing tasks |
 
 #### Prerequisites
+
 Make sure to create an App password for the sender's email account to use in the script below. Refer the below video to learn how to create an App password for GMAIL accounts
 
-{% embed url="https://www.youtube.com/watch?v=2Z_J4l2RJ8s" caption="Creating App Password" %}
+{% embed url="https://www.youtube.com/watch?v=2Z_J4l2RJ8s" %}
 
 #### Script
 
@@ -184,34 +168,32 @@ Let's take an example of a **Shell task** in the Pre-Build stage that ensures th
 
 ![Figure 11b: Configuring Pass/Fail Condition](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-shell-task-2.jpg)
 
-|Field| Values for This Example| Required/Optional | Description|
-| :--- | :--- | :--- | :--- |
-| `Task Name`| `check-db-name`| Required| Enter a name for the task|
-| `Task Description`| `This task stops the build if the database name is not 'prod-db'` | Optional | Short description for the task|
-| `Task Type` | `Shell`| Optional| Select the preferred task type |
-| `Input variables`| Refer the [Input Variable table](#input-variable-table) below | Optional| <p>These variables provide dynamic values to the script at the time of execution and are defined directly in the UI.<br></p><ul><li><strong>Variable name</strong>: Alphanumeric chars and (_) only</li><li><strong>Source or input value</strong>: The variable's value can be global, output from the previous task, or a custom value.<br>Accepted data types include: STRING</li></ul> |
-| `Trigger/Skip condition` | Not required for this example | Optional| A conditional statement to execute or skip the task|
-| `Script`| Refer the [Script](#script-1) below| Required| Custom script for executing tasks|
-| `Output directory path`  | Not required for this example | Optional| Directory path where output files such as logs, errors, etc. will be available after the execution.|
-| `Output variables`| Refer to the [output variable](#output-variables) table| Optional| <p>Output variables  store the output as variables, and these variables can be used as input variables for the next task.</p><ul><li>[Pass/Failure Condition](#passfail-condition) (Optional): Conditional statements to determine the success/failure of the task. A failed condition stops the execution of the next task and/or build process</li></ul>|
+| Field                    | Values for This Example                                                        | Required/Optional | Description                                                                                                                                                                                                                                                                                                                                                                                |
+| ------------------------ | ------------------------------------------------------------------------------ | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `Task Name`              | `check-db-name`                                                                | Required          | Enter a name for the task                                                                                                                                                                                                                                                                                                                                                                  |
+| `Task Description`       | `This task stops the build if the database name is not 'prod-db'`              | Optional          | Short description for the task                                                                                                                                                                                                                                                                                                                                                             |
+| `Task Type`              | `Shell`                                                                        | Optional          | Select the preferred task type                                                                                                                                                                                                                                                                                                                                                             |
+| `Input variables`        | Refer the [Input Variable table](pre-post-tasks.md#input-variable-table) below | Optional          | <p>These variables provide dynamic values to the script at the time of execution and are defined directly in the UI.<br></p><ul><li><strong>Variable name</strong>: Alphanumeric chars and (_) only</li><li><strong>Source or input value</strong>: The variable's value can be global, output from the previous task, or a custom value.<br>Accepted data types include: STRING</li></ul> |
+| `Trigger/Skip condition` | Not required for this example                                                  | Optional          | A conditional statement to execute or skip the task                                                                                                                                                                                                                                                                                                                                        |
+| `Script`                 | Refer the [Script](pre-post-tasks.md#script-1) below                           | Required          | Custom script for executing tasks                                                                                                                                                                                                                                                                                                                                                          |
+| `Output directory path`  | Not required for this example                                                  | Optional          | Directory path where output files such as logs, errors, etc. will be available after the execution.                                                                                                                                                                                                                                                                                        |
+| `Output variables`       | Refer to the [output variable](pre-post-tasks.md#output-variables) table       | Optional          | <p>Output variables store the output as variables, and these variables can be used as input variables for the next task.</p><ul><li><a href="pre-post-tasks.md#passfail-condition">Pass/Failure Condition</a> (Optional): Conditional statements to determine the success/failure of the task. A failed condition stops the execution of the next task and/or build process</li></ul>      |
 
 #### Input Variable Table
 
- | Variable|Type| Value| Description|
- | :--- | :--- | :--- | :--- |
- | `DB_NAME`| String | `prod-db`| Name of the database to be backed up|
+| Variable  | Type   | Value     | Description                          |
+| --------- | ------ | --------- | ------------------------------------ |
+| `DB_NAME` | String | `prod-db` | Name of the database to be backed up |
 
 * To add an input variable, click **+ Add Variable** next to the **Input Variable**, a new table appears asking you to enter the variable and its required information.
+*   You can click `+` icon next to **Variable** header field to add more rows to the input variable table.\
 
-* You can click `+` icon next to **Variable** header field to add more rows to the input variable table.<br>
 
     ![Figure 12: Variable configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-var-config.jpg)
-
-* You can click the slider icon next to each variable name to make its value required and add a description for it.
+*   You can click the slider icon next to each variable name to make its value required and add a description for it.
 
     ![Figure 13: Value configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-val-config.jpg)
-
-* You can click the slider icon next to each variable value to add choices, allow custom input, and ask value at runtime.
+*   You can click the slider icon next to each variable value to add choices, allow custom input, and ask value at runtime.
 
     ![Figure 14: Add choice](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-add-choice.jpg)
 
@@ -237,9 +219,9 @@ fi
 
 #### Output Variables
 
-| Variable           | Type   | Description                                         |
-| ------------------ | ------ | --------------------------------------------------- |
-| `DB_VALIDATION`    | String | Indicates whether the DB is valid (pass or fail)  |
+| Variable        | Type   | Description                                      |
+| --------------- | ------ | ------------------------------------------------ |
+| `DB_VALIDATION` | String | Indicates whether the DB is valid (pass or fail) |
 
 #### Pass/Fail Condition
 
@@ -259,41 +241,39 @@ Since we have already configured a shell task to validate the database name, we 
 
 ![Figure 15b: Configuring task](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-container-task-2.jpg)
 
-| Field| Values for This Example| Required/Optional | Description|
-| :---|:---|:---|:---|
-| `Task name`| `verify-db-connectivity`| Required|Enter a name for the task|
-| `Description`| Verify DB connection before build | Optional| A descriptive message for the task|
-| `Task type`| `Container Image`| Optional| Allows you to execute commands and scripts inside a custom Docker container|
-| `Input variables`| Refer the [Input Variable table](#input-variable-table-1) below | Optional| <p>These variables provide dynamic values to the script and are defined directly in the UI.<br></p><ul><li><strong>Variable name</strong>: Alphanumeric chars and (_) only</li><li><strong>Source or input value</strong>: The variable's value can be global, output from the previous task, or a custom value.<br>Accepted data types include: STRING</li></ul> |
-| `Trigger/Skip condition`| `DB_VALIDATION == pass`| Optional| Execute or skip the task based on the condition provided.|
-| `Container image`| `mysql:8.0`| Required| Select an image from the drop-down list or enter a custom value in the format `<image>:<tag>`|
-| `Mount custom code`| Refer below [Mount custom code](#mount-custom-code) section| Optional| <p>Enable to mount the custom code in the container. Enter the script in the box below.</p><ul><li>**Mount above code at** (required): Path where the code should be mounted, eg, `/scripts`</li></ul>|
-| `Command`| `sh`| Optional|Mention commands to execute inside the container|
-| `Args`| `/scripts/check-db.sh`| Optional| The arguments to be passed to the command mentioned in the command field|
-| `Port mapping`| `No`| Optional| The port number on which the container listens. The port number exposes the container to outside services.|
-| `Mount code to container`| `yes`| Optional| Mounts the source code (configured git repository) inside the container. The default is "No". If set to "Yes", enter the path where the source should be mounted inside the container.|
-| `Mount directory from host` |`No`| Optional| Mount any directory from the host into the container. This can be used to mount code or even output directories.|
-| `Output directory path`|`No`| Optional| Directory path where output files such as logs, errors, etc. will be available after the execution.|
+| Field                       | Values for This Example                                                          | Required/Optional | Description                                                                                                                                                                                                                                                                                                                                                       |
+| --------------------------- | -------------------------------------------------------------------------------- | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Task name`                 | `verify-db-connectivity`                                                         | Required          | Enter a name for the task                                                                                                                                                                                                                                                                                                                                         |
+| `Description`               | Verify DB connection before build                                                | Optional          | A descriptive message for the task                                                                                                                                                                                                                                                                                                                                |
+| `Task type`                 | `Container Image`                                                                | Optional          | Allows you to execute commands and scripts inside a custom Docker container                                                                                                                                                                                                                                                                                       |
+| `Input variables`           | Refer the [Input Variable table](pre-post-tasks.md#input-variable-table-1) below | Optional          | <p>These variables provide dynamic values to the script and are defined directly in the UI.<br></p><ul><li><strong>Variable name</strong>: Alphanumeric chars and (_) only</li><li><strong>Source or input value</strong>: The variable's value can be global, output from the previous task, or a custom value.<br>Accepted data types include: STRING</li></ul> |
+| `Trigger/Skip condition`    | `DB_VALIDATION == pass`                                                          | Optional          | Execute or skip the task based on the condition provided.                                                                                                                                                                                                                                                                                                         |
+| `Container image`           | `mysql:8.0`                                                                      | Required          | Select an image from the drop-down list or enter a custom value in the format `<image>:<tag>`                                                                                                                                                                                                                                                                     |
+| `Mount custom code`         | Refer below [Mount custom code](pre-post-tasks.md#mount-custom-code) section     | Optional          | <p>Enable to mount the custom code in the container. Enter the script in the box below.</p><ul><li><strong>Mount above code at</strong> (required): Path where the code should be mounted, eg, <code>/scripts</code></li></ul>                                                                                                                                    |
+| `Command`                   | `sh`                                                                             | Optional          | Mention commands to execute inside the container                                                                                                                                                                                                                                                                                                                  |
+| `Args`                      | `/scripts/check-db.sh`                                                           | Optional          | The arguments to be passed to the command mentioned in the command field                                                                                                                                                                                                                                                                                          |
+| `Port mapping`              | `No`                                                                             | Optional          | The port number on which the container listens. The port number exposes the container to outside services.                                                                                                                                                                                                                                                        |
+| `Mount code to container`   | `yes`                                                                            | Optional          | Mounts the source code (configured git repository) inside the container. The default is "No". If set to "Yes", enter the path where the source should be mounted inside the container.                                                                                                                                                                            |
+| `Mount directory from host` | `No`                                                                             | Optional          | Mount any directory from the host into the container. This can be used to mount code or even output directories.                                                                                                                                                                                                                                                  |
+| `Output directory path`     | `No`                                                                             | Optional          | Directory path where output files such as logs, errors, etc. will be available after the execution.                                                                                                                                                                                                                                                               |
 
 #### Input Variable Table
 
-| Variable| Type| Value| Description|
-| :--- | :---| :--- | :--- |
-| `DB_NAME`| String | `prod-db`| Name of the database|
-| `DB_HOST` | String | `192.168.1.10` | Database hostname or IP address|
-| `DB_USER` | String | `root` | Database user|
+| Variable  | Type   | Value          | Description                     |
+| --------- | ------ | -------------- | ------------------------------- |
+| `DB_NAME` | String | `prod-db`      | Name of the database            |
+| `DB_HOST` | String | `192.168.1.10` | Database hostname or IP address |
+| `DB_USER` | String | `root`         | Database user                   |
 
 * To add an input variable, click **+ Add Variable** next to the `Input Variable`, a new table appears asking you to enter the variable and its required information.
+*   You can click `+` icon next to **Variable** header field to add more rows to the input variable table.\
 
-* You can click `+` icon next to **Variable** header field to add more rows to the input variable table.<br>
 
     ![Figure 16: Variable configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-var-config.jpg)
-
-* You can click the slider icon next to each variable name to make its value required and add a description for it.
+*   You can click the slider icon next to each variable name to make its value required and add a description for it.
 
     ![Figure 17: Value configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-val-config.jpg)
-
-* You can click the slider icon next to each variable value to add choices, allow custom input, and ask value at runtime.
+*   You can click the slider icon next to each variable value to add choices, allow custom input, and ask value at runtime.
 
     ![Figure 18: Add choice](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-add-choice.jpg)
 
@@ -321,7 +301,7 @@ fi
 
 **Note:** The examples above demonstrate configuring tasks in the Pre-Build and Post-Build stages; you can add tasks in the Pre-Deployment, and Post-Deployment stages in exactly the same way.
 
----
+***
 
 ## Additional configurations for Pre/Post-Deployment Tasks
 
@@ -331,19 +311,20 @@ Pre/Post-Deployment Tasks have some additional configurations (required and opti
 
 The execution of the Pre/Post-Deployment stages can be set to:
 
-**Automatically (default):** 
+**Automatically (default):**
 
- * Pre-deployment stage will trigger automatically when the build image is available. 
- * Post-deployment stage will trigger automatically after the successful deployment.
+* Pre-deployment stage will trigger automatically when the build image is available.
+* Post-deployment stage will trigger automatically after the successful deployment.
 
 **Manually:** The User needs to trigger the Pre/Post-Deployment stages manually.
 
-  ![Figure 19: Trigger Deployment Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-trigger-post.jpg)
+![Figure 19: Trigger Deployment Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-trigger-post.jpg)
 
 ### ConfigMaps & Secrets
 
 {% hint style="info" %}
-### Prerequisites
+#### Prerequisites
+
 Make sure you have added [ConfigMaps](../config-maps.md) and [Secrets](../secrets.md) in App Configuration.
 {% endhint %}
 
@@ -353,7 +334,7 @@ If you want to use some configuration files and secrets in pre-deployment stages
 
 ### Execute tasks in an application environment
 
-These `Pre-deployment CD / Post-deployment CD` pods can be created in your deployment cluster or the Devtron build cluster. If your scripts/tasks has some dependency on the deployment environment, you may run these pods in the deployment cluster. Thus, your scripts \(if any\) can interact with the cluster services that may not be publicly exposed.
+These `Pre-deployment CD / Post-deployment CD` pods can be created in your deployment cluster or the Devtron build cluster. If your scripts/tasks has some dependency on the deployment environment, you may run these pods in the deployment cluster. Thus, your scripts (if any) can interact with the cluster services that may not be publicly exposed.
 
 Some tasks require extra permissions for the node where Devtron is installed. However, if the node already has the necessary permissions for deploying applications, there is no need to assign them again. Instead, you can enable the **Execute tasks in application environment** option for the pre-CD or post-CD steps. By default, this option is disabled.
 
@@ -361,13 +342,11 @@ Some tasks require extra permissions for the node where Devtron is installed. Ho
 
 To enable the `Execute tasks in application environment` option, follow these steps:
 
-1. Go to the **Chart Store** and search for the `devtron-in-clustercd` chart.
+1.  Go to the **Chart Store** and search for the `devtron-in-clustercd` chart.
 
     ![Figure 22: 'devtron-in-clustercd' Chart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/devtron-incluster-chart.jpg)
-
 2. Configure the chart according to your requirements and deploy it in the target cluster.
-
-3. After the deployment, edit the devtron-cm configmap and add the following key-value pair:
+3.  After the deployment, edit the devtron-cm configmap and add the following key-value pair:
 
     ```bash
     ORCH_HOST: <host_url>/orchestrator/webhook/msg/nats
@@ -381,27 +360,22 @@ To enable the `Execute tasks in application environment` option, follow these st
     `ORCH_HOST` value should be the same as of `CD_EXTERNAL_LISTENER_URL` value, which is passed in values.yaml.
 
     ![Figure 23: Configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/incluster-configuration.jpg)
-
-4. Delete the Devtron pod using the following command:
+4.  Delete the Devtron pod using the following command:
 
     ```bash
     kubectl delete pod -l app=devtron -n devtroncd
     ```
-
-5. Again, navigate to the chart store and search for the "migration-incluster-cd" chart.
+5.  Again, navigate to the chart store and search for the "migration-incluster-cd" chart.
 
     ![Figure 24: 'migration-incluster-cd' chart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/migration-incluster-chart.jpg)
-
-6. Edit the `cluster-name` and `secret name` values within the chart. The `cluster name` refers to the name used when adding the cluster in the global configuration and for which you are going to enable `Execute tasks in application environment` option.
+6.  Edit the `cluster-name` and `secret name` values within the chart. The `cluster name` refers to the name used when adding the cluster in the global configuration and for which you are going to enable `Execute tasks in application environment` option.
 
     ![Figure 25: Configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/migration-incluster.jpg)
-
 7. Deploy the chart in any environment within the Devtron cluster. Now you should be able to enable the `Execute tasks in application environment` option for an environment of target cluster.
 
----
+***
 
 ## What's next
 
 * Trigger the [CI pipeline](../../deploying-application/triggering-ci.md)
-
 * Trigger the [CD pipeline](../../deploying-application/triggering-cd.md)
