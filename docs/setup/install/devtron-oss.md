@@ -186,7 +186,7 @@ Run the following command:
 minikube service devtron-service --namespace devtroncd
 ```
 
-<mark style="color:purple;">**Dashboard URL**</mark><mark style="color:purple;">: (directly opens in your browser)</mark>
+<mark style="color:purple;">**Dashboard URL**</mark><mark style="color:purple;">: (Directly opens in your browser)</mark>
 {% endtab %}
 {% endtabs %}
 
