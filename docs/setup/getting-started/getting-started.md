@@ -29,28 +29,28 @@ You can create a cluster using one of the following cloud providers as per your 
 
 ### Recommended Resources
 
-The minimum requirements for installing `Modern Kubernetes Dashboard by Devtron` and `Devtron with CI/CD` as per the number of applications you want to manage on `Devtron` are provided below:
+The minimum requirements for installing `Devtron` depends on the integrations:
 
 * For configuring small resources (to manage not more than 5 apps on Devtron):
 
-    | Integration                                | CPU | Memory |
-    | ------------------------------------------ | :-: | :----: |
-    | **Devtron with CI/CD**                     |  2  |  6 GB  |
-    | **Modern Kubernetes Dashboard by Devtron** |  1  |  1 GB  |
+    | Integration                                    | CPU | Memory |
+    | ---------------------------------------------- | :-: | :----: |
+    | **With CI/CD, GitOps**                         |  2  |  6 GB  |
+    | **Minimal (Only Dashboard, No Integrations)**  |  1  |  1 GB  |
 
 * For configuring medium/larger resources (to manage more than 5 apps on Devtron):
 
-    | Integration                                | CPU | Memory |
-    | ------------------------------------------ | :-: | :----: |
-    | **Devtron with CI/CD**                     |  6  |  13 GB |
-    | **Modern Kubernetes Dashboard by Devtron** |  2  |  3 GB  |
+    | Integration                                   | CPU | Memory |
+    | ------------------------------------------    | :-: | :----: |
+    | **With CI/CD, GitOps**                        |  6  |  13 GB |
+    | **Minimal (Only Dashboard, No Integrations)** |  2  |  3 GB  |
 
 > Refer to the [Override Configurations](../install/override-default-devtron-installation-configs.md) section for more information. If you have questions, let us know on our Discord channel. [![Join us on Discord](https://img.shields.io/badge/Join%20us%20on-Discord-e01563.svg)](https://discord.gg/jsRG5qx2gp)
 
 {% hint style="warning" %}
 ### Note
 * Please make sure that the recommended resources are available on your Kubernetes cluster before you proceed with Devtron installation.
-* It is NOT recommended to use brustable CPU VMs (T series in AWS, B Series in Azure and E2/N1 in GCP) for Devtron installation to experience consistency in performance.
+* We do NOT recommend using brustable CPU VMs (T series in AWS, B Series in Azure and E2/N1 in GCP) for Devtron installation. This is to experience consistency in performance.
 {% endhint %}
 
 {% hint style="success" %}
