@@ -33,17 +33,17 @@ The minimum requirements for installing `Modern Kubernetes Dashboard by Devtron`
 
 * For configuring small resources (to manage not more than 5 apps on Devtron):
 
-| Integration                                | CPU | Memory |
-| ------------------------------------------ | :-: | :----: |
-| **Devtron with CI/CD**                     |  2  |  6 GB  |
-| **Modern Kubernetes Dashboard by Devtron** |  1  |  1 GB  |
+    | Integration                                | CPU | Memory |
+    | ------------------------------------------ | :-: | :----: |
+    | **Devtron with CI/CD**                     |  2  |  6 GB  |
+    | **Modern Kubernetes Dashboard by Devtron** |  1  |  1 GB  |
 
 * For configuring medium/larger resources (to manage more than 5 apps on Devtron):
 
-| Integration                                | CPU | Memory |
-| ------------------------------------------ | :-: | :----: |
-| **Devtron with CI/CD**                     |  6  |  13 GB |
-| **Modern Kubernetes Dashboard by Devtron** |  2  |  3 GB  |
+    | Integration                                | CPU | Memory |
+    | ------------------------------------------ | :-: | :----: |
+    | **Devtron with CI/CD**                     |  6  |  13 GB |
+    | **Modern Kubernetes Dashboard by Devtron** |  2  |  3 GB  |
 
 > Refer to the [Override Configurations](../install/override-default-devtron-installation-configs.md) section for more information.
 
@@ -52,6 +52,4 @@ The minimum requirements for installing `Modern Kubernetes Dashboard by Devtron`
 * It is NOT recommended to use brustable CPU VMs (T series in AWS, B Series in Azure and E2/N1 in GCP) for Devtron installation to experience consistency in performance.
 {% endhint %}
 
-{% hint style="info" %}
-If you have questions, please let us know on our discord channel. [![Join us on Discord](https://img.shields.io/badge/Join%20us%20on-Discord-e01563.svg)](https://discord.gg/jsRG5qx2gp)
-{% endhint %}
+If you have questions, please let us know on our Discord channel. [![Join us on Discord](https://img.shields.io/badge/Join%20us%20on-Discord-e01563.svg)](https://discord.gg/jsRG5qx2gp)
