@@ -5,6 +5,7 @@
 * [Install Devtron](setup/install/README.md)
   * [Install Devtron OSS](setup/install/devtron-oss.md)
   * [Install Devtron Freemium](install/devtron-freemium.md)
+  * [Get Devtron Enterprise](https://devtron.ai/contact-sales)
 * [Install Devtron Freemium](setup/install/freemium.md)
 * [Global Configurations](user-guide/global-configurations/README.md)
   * [Host URL](user-guide/global-configurations/host-url.md)
