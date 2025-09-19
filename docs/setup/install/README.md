@@ -114,7 +114,7 @@ helm install devtron devtron/devtron-operator \
 
 It usually takes 5–15 minutes to spin up all Devtron microservices (depending on your installation option).
 
-You may check the status by running the command below. If the output is `Applied`, Devtron is fully installed.
+You may check the status by running the command below. If the output is `Applied`, Devtron is installed.
 
 ```bash
 kubectl -n devtroncd get installers installer-devtron \
