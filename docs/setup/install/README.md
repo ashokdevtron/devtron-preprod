@@ -6,7 +6,44 @@ Devtron can be installed on any [Kubernetes cluster](../getting-started/getting-
 
 The following tiers are available in Devtron:
 
-<table><thead><tr><th width="112.78125">Tiers</th><th width="372.6640625">Description</th><th>Installation Link</th></tr></thead><tbody><tr><td>OSS</td><td>OSS edition, with optional CI/CD and GitOps modules</td><td><a href="devtron-oss.md"><strong>Install Devtron OSS</strong></a></td></tr><tr><td>Freemium</td><td>All enterprise features, limited to 1 cluster managed by Devtron</td><td><a href="../../install/devtron-freemium.md"><strong>Install Devtron Freemium</strong></a></td></tr><tr><td>Enterprise</td><td>Full access to enterprise features, with multi-cluster support and enterprise-scale solutions</td><td><a href="https://devtron.ai/contact-sales"><strong>Get Devtron Enterprise</strong></a></td></tr></tbody></table>
+<table>
+	<thead>
+		<tr>
+			<th width="112.78125">Tiers</th>
+			<th width="372.6640625">Description</th>
+			<th>Installation Link</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>OSS</td>
+			<td>OSS edition, with optional CI/CD and GitOps modules</td>
+			<td>
+				<a href="devtron-oss.md">
+					<strong>Install Devtron OSS</strong>
+				</a>
+			</td>
+		</tr>
+		<tr>
+			<td>Freemium</td>
+			<td>All enterprise features, limited to 1 cluster managed by Devtron</td>
+			<td>
+				<a href="../../install/devtron-freemium.md">
+					<strong>Install Devtron Freemium</strong>
+				</a>
+			</td>
+		</tr>
+		<tr>
+			<td>Enterprise</td>
+			<td>Full access to enterprise features, with multi-cluster support and enterprise-scale solutions</td>
+			<td>
+				<a href="https://devtron.ai/contact-sales">
+					<strong>Get Devtron Enterprise</strong>
+				</a>
+			</td>
+		</tr>
+	</tbody>
+</table>
 
 ## Additional Resources
 

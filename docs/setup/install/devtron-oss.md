@@ -72,6 +72,10 @@ helm repo update devtron
 {% tab title="Minimal (Dashboard Only)" %}
 #### Command to Install Devtron without Integrations
 
+{% hint style="warning" %}
+**Prerequisite**: [Add Devtron Helm Repository](#step-1-add-devtron-helm-repository)
+{% endhint %}
+
 ```bash
 helm install devtron devtron/devtron-operator \
 --create-namespace --namespace devtroncd
@@ -80,6 +84,10 @@ helm install devtron devtron/devtron-operator \
 
 {% tab title="With CI/CD" %}
 #### Command to Install Devtron with CI/CD
+
+{% hint style="warning" %}
+**Prerequisite**: [Add Devtron Helm Repository](#step-1-add-devtron-helm-repository)
+{% endhint %}
 
 ```bash
 helm install devtron devtron/devtron-operator \
@@ -91,6 +99,10 @@ helm install devtron devtron/devtron-operator \
 {% tab title="With CI/CD + GitOps (Argo CD)" %}
 #### Command to Install Devtron with CI/CD + GitOps (ArgoCD)
 
+{% hint style="warning" %}
+**Prerequisite**: [Add Devtron Helm Repository](#step-1-add-devtron-helm-repository)
+{% endhint %}
+
 ```bash
 helm install devtron devtron/devtron-operator \
 --create-namespace --namespace devtroncd \
@@ -101,7 +113,7 @@ helm install devtron devtron/devtron-operator \
 {% endtabs %}
 
 {% hint style="info" %}
-#### How much time does it take for installation?
+### How much time does it take for installation?
 
 Depending on the option you choose to install, it might take anywhere between 5 to 15 minutes to spin up all the Devtron microservices.
 
