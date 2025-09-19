@@ -52,7 +52,7 @@ kubectl apply -f https://raw.githubusercontent.com/rancher/local-path-provisione
 {% hint style="info" %}
 #### Need Advanced Help?
 
-See [Additional Installation Resources](../../reference/) for production infra recommendations, air-gapped installs, blob storage, config overrides, backups, and more.
+See [Additional Installation Resources](../../reference/README.md) for production infra recommendations, air-gapped installs, blob storage, config overrides, backups, and more.
 {% endhint %}
 
 ***
@@ -70,7 +70,8 @@ helm repo update devtron
 
 {% tabs %}
 {% tab title="Minimal (Dashboard Only)" %}
-#### Command to Install Devtron without Integrations
+
+### Command to Install Devtron without Integrations
 
 {% hint style="warning" %}
 **Prerequisite**: [Add Devtron Helm Repository](#step-1-add-devtron-helm-repository)
@@ -83,7 +84,8 @@ helm install devtron devtron/devtron-operator \
 {% endtab %}
 
 {% tab title="With CI/CD" %}
-#### Command to Install Devtron with CI/CD
+
+### Command to Install Devtron with CI/CD
 
 {% hint style="warning" %}
 **Prerequisite**: [Add Devtron Helm Repository](#step-1-add-devtron-helm-repository)
@@ -97,7 +99,8 @@ helm install devtron devtron/devtron-operator \
 {% endtab %}
 
 {% tab title="With CI/CD + GitOps (Argo CD)" %}
-#### Command to Install Devtron with CI/CD + GitOps (ArgoCD)
+
+### Command to Install Devtron with CI/CD + GitOps (ArgoCD)
 
 {% hint style="warning" %}
 **Prerequisite**: [Add Devtron Helm Repository](#step-1-add-devtron-helm-repository)
